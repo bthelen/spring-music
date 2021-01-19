@@ -1,0 +1,12 @@
+---
+applications:
+  - name: spring-music
+    memory: 1G
+    buildpacks:
+      - java_buildpack_offline
+    path: build/libs/spring-music-1.0.jar
+    services:
+      - spring-music-db
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
